@@ -1,0 +1,382 @@
+ls  显示文件和目录列表
+
+    -l 列出文件的详细信息
+
+    -a 列出当前目录所有文件，包含隐藏文件
+
+
+
+mkdir 创建目录删除？rmdir  非空
+
+-p 父目录不存在情况下先生成父目录
+
+
+
+rm 删除文件
+
+    -r 同时删除该目录下的所有文件
+
+    -f 强制删除文件或目录
+
+     删除文件夹 rmdir 文件夹不能为空 
+
+  删除文件夹   rm-rf   目录名字-r 就是向下递归，不管有多少级目录，一并删除-f 就是
+
+  直接强行删除，不作任何提示的意思
+
+
+
+find 在文件系统中查找指定的文件
+
+    -name  文件名
+
+
+
+
+cd      切换目录
+
+touch   生成一个空文件  
+
+echo  生成一个带内容文件     echo abcd>a.txt
+
+cat、tac 显示文本文件内容
+
+cp 复制文件或目录
+
+wc 统计文本文档的行数，字数，字符数  
+
+
+mv 移动文件或目录、文件
+
+mv  aaa bbb 将aaa改名为bbb
+
+grep 在指定的文本文件中查找指定的字符串
+
+rmdir 删除空目录
+
+tree 显示目录目录改名树
+
+pwd 显示当前工作目录
+
+ln   建立链接文件
+
+more、less 分页显示文本文件内容
+
+head,tail分别显示文件开头和结尾内容
+
+ 
+
+系统管理命令
+stat   显示指定文件的相关信息,比ls命令显示内容更多
+
+who    显示在线登录用户
+
+hostname 显示主机名称
+
+uname  显示系统信息 d
+
+top    显示当前系统中耗费资源最多的进程
+
+ps     显示瞬间的进程状态
+
+du     显示指定的文件（目录）已使用的磁盘空间的总量
+
+df     显示文件系统磁盘空间的使用情况
+
+free   显示当前内存和交换空间的使用情况
+
+ifconfig 显示网络接口信息
+
+ping   测试网络的连通性
+
+netstat 显示网络状态信息
+
+man    命令帮助信息查询
+
+clear  清屏
+
+kill   杀死一个进程
+
+        
+
+关机/重启命令
+shutdown系统关机 shutdown 命令可以安全的关闭Linux系统，shutdown命令必须有超级用户才能执行。Shutdown命令执行后会以广播的形式通知正在系统中工作的所有用户，
+
+    - r   关机后重启
+
+    - h   关机后不重新启动
+
+    - now 立即关机
+
+    - 12:30 指定关机时间
+
+
+
+halt   关机后关闭电源
+
+reboot 重新启动
+
+        
+
+ 备份压缩命令
+gzip 压缩（解压）文件或目录，压缩文件后缀为gz 
+
+    命令格式：
+
+    gzip [选项] 压缩（解压缩）的文件名
+
+        参数：
+
+        -d 将压缩文件解压。
+
+        -l  对每个压缩文件，显示压缩文件的大小，未压缩文件的大小，压缩比，未压缩文件的名字
+
+        -v 对每一个压缩和解压的文件，显示文件名和压缩比。
+
+        -num 用指定的数字num调整压缩的速度，-1或--fast表示最快压缩方法（低压缩比），
+
+       -9或--best表示最慢压缩方法（高压缩比）。系统缺省值为6
+
+
+
+
+bzip2 压缩（解压）文件或目录，压缩文件后缀为bz2 
+
+    命令格式：
+
+    bzip2[-cdz] 档名
+
+        参数：
+
+        -d ：解压缩的参数
+
+        -z ：压缩的参数
+
+        -num 用指定的数字num调整压缩的速度，-1或--fast表示最快压缩方法（低压缩比），-9或        --best表示最慢压缩方法（高压缩比）。系统缺省值为6
+
+
+
+tar 文件、目录打（解）包
+
+
+    命令格式：
+
+    tar[-cxzjvf]   压缩打包文档的名称欲打包目录
+
+        参数：
+
+        -c ：建立一个归档文件的参数指令
+
+        -x ：解开一个归档文件的参数指令！
+
+        -z ：是否需要用 gzip 压缩？
+
+        -j ：是否需要用 bzip2 压缩？
+
+        -v ：压缩的过程中显示文件
+
+        -f ：使用档名，在 f 之后要立即接档名
+
+        -tf ：查看归档文件里面的文件
+
+        tar -xvzflinux-software-1.3.1.tar.gz
+
+
+
+
+dpkg软件包管理
+可以打开一个终端并输入：
+
+sudo dpkg-i package_file.deb   来安装 .deb 文件。
+
+ 
+
+如需卸载 .deb 文件输入：
+
+sudo dpkg-r package_name  
+
+    dpkg命令参数
+
+    -i 安装软件包。
+
+    -r 卸载软件包，但是不删除软件包的配置文件。
+
+    -P 完全删除软件包，包括相关配置文件。
+
+    -l 查看当前系统中已安装软件包信息。
+
+    -L 查看当前系统中指定软件包的所安装的相关文件。
+
+    -s 查询已安装指定软件包的相关信息。
+
+    -S 查询系统中摸个文件所属的软件包。
+
+
+
+查看软件包所包含的内容
+
+sudo dpkg-c tree_1.5.3-1_i386.deb
+
+
+
+查看软件包详细信息
+
+dpkg -Itree_1.5.3-1_i386.deb
+
+
+
+安装软件包
+
+sudo dpkg-i tree_1.5.3-1_i386.deb
+
+
+
+删除软件包
+
+sudo dpkg-r tree
+
+
+
+
+ APT 使用的一些常用命令
+安装软件包：
+
+sudo apt-getinstall packagename  
+
+ 
+
+删除软件包：
+
+sudoapt-get remove packagename  
+
+ 
+
+获取新的软件包列表：
+
+sudoapt-get update  
+
+ 
+
+升级有可用更新的系统：
+
+sudoapt-get upgrade  
+
+ 
+
+列出更多命令和选项：
+
+apt-gethelp  
+
+ 
+
+通过apt可以直接通过网络安装。
+
+常用的APT命令参数
+
+apt-cachesearch package 搜索包
+
+apt-cacheshow package 获取包的相关信息，如说明、大小、版本等
+
+sudoapt-get install package 安装包
+
+
+
+下载安装程序到你的/var/cache/apt文件夹里面然后进行安装。
+
+sudoapt-get install package - - reinstall 重新安装包
+
+sudoapt-get -f install 修复安装"-f = ――fix-missing"
+
+sudoapt-get remove package 删除包
+
+sudoapt-get remove package - - purge 删除包，包括删除配置文件等
+
+sudoapt-get update 更新源
+
+sudoapt-get upgrade 更新已安装的包
+
+sudoapt-get dist-upgrade 升级系统
+
+sudoapt-get dselect-upgrade 使用 dselect 升级
+
+apt-cachedepends package 了解使用依赖
+
+apt-cacherdepends package 是查看该包被哪些包依赖
+
+sudoapt-get build-dep package 安装相关的编译环境
+
+apt-getsource package 下载该包的源代码
+
+sudoapt-get clean && sudo apt-get autoclean清理无用的包
+
+
+sudoapt-get check 检查是否有损坏的依赖 /var/cache/apt/archives.
+
+
+
+
+
+ 管理账户
+useradd 用户名
+
+    useradd–u（UID号）
+
+    useradd–p（口令）
+
+    useradd–g（分组）
+
+    useradd–s（SHELL）
+
+    useradd–d（用户目录）
+
+ 
+
+usermod修改用户信息
+
+    usermod–u（新UID）
+
+    usermod–d（用户目录）
+
+    usermod–g（组名）
+
+    usermod–s（SHELL）
+
+    usermod–p（新口令）
+
+    usermod–l（新登录名）
+
+    usermod–L (锁定用户账号密码)
+
+    usermod–U (解锁用户账号)
+
+    userdel 用户名 (删除用户账号)
+
+    userdel–r 删除账号时同时删除目录
+
+
+
+groupadd 组账户名 (创建新组)
+
+    groupadd–g 指定组GID
+
+    groupmod–g 更改组的GID
+
+    groupmod–n 更改组账户名
+
+    groupdel 组账户名 (删除指定组账户)
+
+
+
+passwd 用户账户名 (设置用户口令)
+
+    passwd –l用户账户名 (锁定用户账户)
+
+    passwd –u用户账户名 (解锁用户账户)
+
+    passwd –d用户账户名 (删除账户口令)
+
+    gpasswd–a 用户账户名组账户名 (将指定用户添加到指定组)
+
+    gpasswd–d 用户账户名组账户名 (将用户从指定组中删除)
+
+    gpasswd–A 用户账户名组账户名 (将用户指定为组的管理员)
